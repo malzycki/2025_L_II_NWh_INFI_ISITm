@@ -17,8 +17,8 @@ class FlaskrTestCase(unittest.TestCase):
     def test_msg_with_output(self):
         rv = self.app.get('/?output=json')
         # Dekodujemy odpowiedź z serwera do słownika
-        data = json.loads(rv.data) 
-        
+        data = json.loads(rv.data)
+
         # Sprawdzamy konkretne klucze i wartości
         self.assertEqual(data['imie'], "Michał")
         self.assertEqual(data['msg'], "Hello World!")
