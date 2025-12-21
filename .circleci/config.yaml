@@ -1,0 +1,23 @@
+version: 2.1
+
+jobs:
+  build-and-test:  
+    machine:
+      image: ubuntu-2204:current # Używamy nowszej wersji obrazu
+
+    steps:
+      - checkout
+      - run: 
+          name: Instalacja zależności
+          command: make deps
+      - run: 
+          name: Uruchomienie testów
+          command: make test
+      - run:
+          name: Sprawdzenie lintera
+          command: make lint
+
+workflows:
+  basic:  
+    jobs:
+      - build-and-test
