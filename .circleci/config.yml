@@ -2,9 +2,8 @@ version: 2.1
 
 jobs:
   build-and-test:  
-    machine:
-      image: ubuntu-2204:current # Używamy nowszej wersji obrazu
-
+    machine: 
+      image: ubuntu-2204:2024.01.2
     steps:
       - checkout
       - run: 
