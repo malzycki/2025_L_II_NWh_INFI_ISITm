@@ -16,6 +16,7 @@ jobs:
       - run:
           name: Sprawdzenie lintera
           command: make lint
+      - run: make docker_build
 
 workflows:
   basic:  
